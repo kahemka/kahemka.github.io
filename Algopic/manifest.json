@@ -1,9 +1,0 @@
-{
-  "name": "Algopic",
-  "short_name": "Algopic",
-  "lang": "en-US",
-  "start_url": "/Algopic.html",
-  "display": "standalone",
-  "background_color": "white",
-  "theme_color": "white"
-}

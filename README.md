@@ -1,2 +1,2 @@
 # kahemka.github.io
-Personal experiments in JS (client side).
+Personal website: https://kahemka.github.io/.
