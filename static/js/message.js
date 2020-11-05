@@ -17,10 +17,10 @@ function send_message(){
             console.log("Ok");
             console.log(json);
         }
-      else(
+      else{
         console.log("Nok");
         console.log(xhr);
-      )
+      }
     }
     var data = JSON.stringify({"id_message":id_message,"user":user, "email":email,"subject":subject,"text":text});
     xhr.send(data);
