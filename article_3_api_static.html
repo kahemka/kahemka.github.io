@@ -52,40 +52,43 @@
 <div class="row pt-md-4">
 <div class="col-md-12">
 <div class="blog-entry-2">
-<a href="article_2_teaching_platform.html" class="img" style="background-image: url(static/img/Blog/article_2/online_vector.jpg);"></a>
+<a href="#" class="img" style="background-image: url(static/img/Blog/article_3/api.jpg);"></a>
   <p style="font-size:70%;">
     <i>Fond vecteur crée par freepik - fr.freepik.com</i>
   </p>
 <div class="text pt-4">
-<h3 class="mb-4"><a href="#">Teaching ... during lockdown</a></h3>
-<p class="mb-4"></p>
-<p class="mb-4">MOOC platforms like Coursera have been available for a while. Their main purpose is to reach a wide audience by getting rid off the physical limits of traditional teaching.
-  Let's emulate such platforms to adress the issue of teaching during lockdown.</p>
-  <p class="mb-4">
-    This project will actually be used in real condition as part of machine learning courses I will give at <a href="https://dauphine.psl.eu/formations/masters/informatique/m2-informatique-decisionnelle/formation">Université Paris Dauphine</a>.
-  </p>
+<h3 class="mb-4"><a href="#">Analytics & messages API for (static) websites</a></h3>
 
-  <p class="mb-4">The university currently uses Teams as default tool to communicate with students. Live communication with students as well as class recordings will therefore be made through Teams.</p>
-  <p>
-    This online teaching platform will focus on 2 main tasks: delivering courses materials, implementing online homeworks and exam.
+  <p class="mb-4">Want to send me a message on my personal website without opening your email ? You can do it <a href="/contact.html">here </a>!</p>
+  <p class="mb-4">But how is it working behind the scenes ... on a static website like a github page ? After a quick search on internet, it looks like having a hosted website with proper backend capabilities that is
+    linked to a database is mandatory.</p>
+  <p class="mb-4">
+    Let's build a simple API that can be reached by a static website to send and store messages. The benefit of having a separate API website designed for this purpose is not having to setup things again if we want to provide similar functionality to other applications.
+  </p>
+  <p class="mb-4"><b>Caveat:</b> The sender must have access to the website that run the API. For instance,
+    if you are behind a corporate proxy that prevents you from opening pythonanywhere sites, this solution will not work.</p>
+  <p class="mb-4">
+    With this setup, we can actually try to emulate some kind of google analytics service. Here are the functionalities that I find interesting to implement for some generic trafic analytics services:
   </p>
   <h5>
     Specifications:</h5>
     <ul>
-      <li><b>Course materials:</b> Being able to display theoric demonstrations as well as practical programming interactions </li>
-      <li><b>Homeworks and exams:</b> Interactive solution to display homeworks/exams and store students handovers and results.</li>
+      <li><b>No cookies:</b> Either there is an account/login option that indirectly ask if the visitor wants to be identified either its privacy should be respected. </li>
+      <li><b>Visit descriptions:</b> Easier to perform if account/login functionality is implemented. Otherwise let's stick to monitoring timestamp of any visits,
+        duration of visits and in which order pages have been visited for a single visit.  </li>
+      <li><b>Device used:</b> Mobile or desktop, to track any behavior discrepancies between mobile users and other users.</li>
     </ul>
   <h5>
-    IT stack used:</h5>
+
+    Workarounds:</h5>
     <ul>
-      <li><b>UI:</b> HTML/CSS/JS</li>
-      <li><b>Backend:</b> Flask (Python)</li>
-      <li><b>Database:</b> SQL</li>
-      <li><b>Contents:</b> Javascript / Reveal.js (slides) </li>
+      <li><b>No cookies+Visit descriptions:</b> A single visit through a website is usually done by navigating through the different links available.
+        Unless you already know the whole site directory and prefer to navigate only using the adress bar 🙀. </li>
+      <li><b>Device used:</b> It seems that there are no fullproof solutions for that functionality.</li>
+
+
     </ul>
-
-  <p class="mb-4">The platform is available <a href="https://kvu.pythonanywhere.com/Dauphine/Miage/">here</a>.</p>
-
+  <h5>
 
 
 </div>

@@ -14,9 +14,15 @@ function send_message(){
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            console.log(json)
+            console.log("Ok");
+            console.log(json);
         }
+      else(
+        console.log("Nok");
+        console.log(xhr);
+      )
     }
     var data = JSON.stringify({"id_message":id_message,"user":user, "email":email,"subject":subject,"text":text});
     xhr.send(data);
+    console.log("maybe");
 }
