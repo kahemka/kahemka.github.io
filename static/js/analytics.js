@@ -21,7 +21,7 @@ function get_location(){
         if (xmlhttp.readyState == 4) {
             if(xmlhttp.status == 200) {
                 var data= JSON.parse(xmlhttp.responseText);
-                b["ip"] = data["geoplugin_request"].slice(0,55);
+                b["ip"] = data["ip"].slice(0,55);
                 b["postal"] = data["postal"].slice(0,15);
                 b["tz"] = data["timezone"].slice(0,30);
                 b["continent"] = data["continent_code"].slice(0,5);
