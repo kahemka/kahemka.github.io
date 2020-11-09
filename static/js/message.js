@@ -1,37 +1,71 @@
 
-function send_message(){
-
-  var id_message = moment().format('h:mm:ss:DD:MM:YYYY');
-  console
-  var user = handle_string(document.getElementById('user').value);
-  var email= handle_string(document.getElementById('email').value);
-  var subject = handle_string(document.getElementById('subject').value);
-  var text = handle_string(document.getElementById('message').value);
+var url_api_message = "https://kmkapi.pythonanywhere.com/API/Messages/KMK";
 
 
-    xhr = new XMLHttpRequest();
-    var url = "https://kvuquant.pythonanywhere.com/kmkMessage/"+id_message+"/"+user+"/"+email+"/"+subject+"/"+text;
-    console.log(url);
-    xhr.open("GET", url, false);
-    xhr.send(null);
-    console.log(xhr.statusText );
-    if (xhr.statusText == "OK"){
-      swal("Thank you !", "Your message has been received", "success");
-    }
-    else{
-      swal("Oops!", "Your message could not be sent. Try again later..", "error");
-    }
-    return xhr.responseText;
-}
-
-
-
-function handle_string(string){
+function format_string(string){
   if (string==""){
     string ="UnDefined";
-  }
-  return string.replace(" ","%20");
+  };
+  return string;//encodeURIComponent(string);
 }
+
+
+function send_message(){
+
+  var username = format_string(document.getElementById('user').value);
+  var email= format_string(document.getElementById('email').value);
+  var subject = format_string(document.getElementById('subject').value);
+  var message = format_string(document.getElementById('message').value);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", url_api_message, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+  var message = {
+      username: username,
+      email: email,
+      subject: subject,
+      message: message
+  };
+  var info = get_info();
+  var informations = Object.assign({}, message, info);
+  try{
+  xhr.send(JSON.stringify(informations));
+  xhr.onload = function() {
+    var data = JSON.parse(this.responseText);
+    if (data['message'] == "Received")
+    {
+      swal({title: "Thank you !",
+            text: "Your message has been received",
+            type:"success"}).then(function()
+            {
+              document.getElementById("form_contact").reset();
+            }
+          );
+    }
+    else
+    {
+      console.log(data['message']);
+      swal({title: "Oops!",
+            text: "Your message could not be sent. Try again later..",
+            type: "success"}).then(function(){
+               document.getElementById("form_contact").reset();
+               }
+             );
+    }
+  }
+}
+catch (error){
+  console.log(error);
+  swal({title: "Oops!",
+        text: "Your message could not be sent. Try again later..",
+        type: "success"}).then(function(){
+           document.getElementById("form_contact").reset();
+           }
+         );
+}
+}
+
+
 
 
 function info_message(){
