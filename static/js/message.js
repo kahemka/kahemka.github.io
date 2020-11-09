@@ -11,7 +11,6 @@ function format_string(string){
 
 
 function send_message(){
-
   var username = format_string(document.getElementById('user').value);
   var email= format_string(document.getElementById('email').value);
   var subject = format_string(document.getElementById('subject').value);
@@ -76,3 +75,7 @@ function info_message(){
   content: el,
   });
 }
+
+document.getElementById("button").onclick = send_message;
+document.getElementById("button").disabled = false;
+document.getElementById("button").value = "Send message";
