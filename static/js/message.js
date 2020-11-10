@@ -11,24 +11,43 @@ function format_string(string){
 
 
 function send_message(){
+  document.getElementById("button").value = "Sending...wait";
   var username = format_string(document.getElementById('user').value);
   var email= format_string(document.getElementById('email').value);
   var subject = format_string(document.getElementById('subject').value);
   var message = format_string(document.getElementById('message').value);
 
   var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange=function() {
+    if (xhr.readyState === 4){   //if complete
+        if(xhr.status === 200){  //check if "OK" (200)
+            //success
+        } else {
+            swal({title: "Oops!",
+        text: "Your message could not be sent. Corporate proxy might be the issue !",
+        type: "success"}).then(function(){
+           document.getElementById("form_contact").reset();
+           }
+         );
+        }
+      }
+  }
+
+
   xhr.open("POST", url_api_message, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Content-Type', 'text/plain');
   var message = {
       username: username,
       email: email,
       subject: subject,
-      message: message
+      message: message,
+      delta_time : (moment()-timestamp)/1000
   };
   var info = get_info();
   var informations = Object.assign({}, message, info);
-  try{
+
   xhr.send(JSON.stringify(informations));
+
   xhr.onload = function() {
     var data = JSON.parse(this.responseText);
     if (data['message'] == "Received")
@@ -52,16 +71,10 @@ function send_message(){
              );
     }
   }
-}
-catch (error){
-  console.log(error);
-  swal({title: "Oops!",
-        text: "Your message could not be sent. Try again later..",
-        type: "success"}).then(function(){
-           document.getElementById("form_contact").reset();
-           }
-         );
-}
+
+
+
+  document.getElementById("button").value = "Send message";
 }
 
 

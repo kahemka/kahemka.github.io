@@ -2,7 +2,6 @@ var timestamp = moment();
 
 function get_info(){
   var basic = {};
-  basic["delta_time"] = (moment()-timestamp)/1000;
   basic["date"] = moment().format('YYYY-MM-DD H:mm:ss');
   basic["device"] = get_device().slice(0,255);
   basic["browser"] = get_browser().slice(0,40);
