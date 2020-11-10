@@ -20,15 +20,15 @@ function get_location(){
         if (xmlhttp.readyState == 4) {
             if(xmlhttp.status == 200) {
                 var data= JSON.parse(xmlhttp.responseText);
-                b["ip"] = data["ip"].slice(0,55);
+                b["ip"] = "GDPR"//data["ip"].slice(0,55);
                 b["postal"] = data["postal"].slice(0,15);
                 b["tz"] = data["timezone"].slice(0,30);
                 b["continent"] = data["continent_code"].slice(0,5);
                 b["country"] = data["country_name"].slice(0,50);
                 b["region"] = data["region"].slice(0,50);
                 b["city"] = data["city"].slice(0,50);
-                b["latitude"] = parseFloat(data["latitude"]);
-                b["longitude"] = parseFloat(data["longitude"]);
+                b["latitude"] = 0.0 //parseFloat(data["latitude"]); GDPR
+                b["longitude"] = 0.0 // parseFloat(data["longitude"]); GDPR
              }
         }
     };

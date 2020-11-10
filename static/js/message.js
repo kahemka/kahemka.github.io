@@ -34,7 +34,7 @@ function send_message(){
   }
 
 
-  xhr.open("POST", url_api_message, true);
+  xhr.open("POST", url_api_message, false);
     xhr.setRequestHeader('Content-Type', 'text/plain');
   var message = {
       username: username,
