@@ -1,80 +1,61 @@
-<!--
-=========================================================
-Material Dashboard - v2.1.2
-=========================================================
 
-Product Page: https://www.creative-tim.com/product/material-dashboard
-Copyright 2020 Creative Tim (https://www.creative-tim.com)
-Coded by Creative Tim
-
-=========================================================
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    Client Side Solutions
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-  <!-- Extra details for Live View on GitHub Pages -->
-  <!-- Canonical SEO -->
-  <link rel="canonical" href="#" />
-  <!--  Social tags      -->
-  <meta name="keywords" content="Data Science, Machine Learning, Business, Data Analytics">
-  <meta name="description" content="Simple & pragmatic data analytics.">
-  <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content="Data analytics & automation">
-  <meta itemprop="description" content="Streamline data analytics.">
-  <meta itemprop="image" content="https://s3.amazonaws.com/creativetim_bucket/products/50/opt_md_thumbnail.jpg">
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="Streamline Data Analytics">
-  <meta name="twitter:site" content="@Kahemka">
-  <meta name="twitter:title" content="Data analytics & automation">
-  <meta name="twitter:description" content="Simple & pragmatic data analytics implement.">
-  <meta name="twitter:creator" content="@Kahemka">
-  <meta name="twitter:image" content="https://s3.amazonaws.com/creativetim_bucket/products/50/opt_md_thumbnail.jpg">
-  <!-- Open Graph data -->
-  <!--     Fonts and icons     -->
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Client Side Solutions : Safe, pragmatic & tailored data analytics">
+  <title>Client Side Solutions</title>
+  <!-- Favicon -->
+  <!--<link rel="icon" href="favicon.png" type="image/png">-->
+
+  <!--Styles -->
+<!-- Flask template
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar_style.css') }}" type="text/css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" type="text/css">
+-->
+
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
+<link rel="stylesheet" href="static/css/font-awesome.css">
+<link rel="stylesheet" href="static/css/sidebar_style.css" type="text/css">
+<link rel="stylesheet" href="static/css/custom.css" type="text/css">
+  <!--    icons     -->
   <link rel="stylesheet" href="static/fonts/bootstrap-icons.css">
-  <!-- CSS Files -->
-  <link href="static/css/material-dashboard.min.css" rel="stylesheet" />
 
 
-</head>
 
-<body class="">
-  <div class="wrapper ">
-    <div class="sidebar" data-color="danger" data-background-color="white">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+<body>
 
-        Tip 2: you can also add an image using data-image tag
-    -->
-      <div class="logo"><a href="#" class="simple-text logo-normal">
-           <i class="bi bi-shield-check"></i> CLIENT SIDE
-        </a></div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+		<br>
+		<br>
+            <div class="sidebar-header">
+                <h4><i class="bi bi-columns-gap"></i></i> CLIENT SIDE</h4>
+            </div>
+
+          
+		   <ul class="nav">
           <li class="nav-item active  ">
             <a class="nav-link" href="/Introduction.html">
-              <i class="bi bi-compass"></i>
-              <p style="font-weight:bold"><b>Introduction</b></p>
+            &nbsp <i class="bi bi-compass"></i> <b>Introduction</b>
             </a>
           </li>
 
 		  
 		   <li class="nav-item">
-                <a class="nav-link collapsed text-truncate" href="#" data-toggle="collapse"><i class="bi bi-bar-chart-fill"></i>
-              <p style="font-weight:bold"><b>Data Viz</b></p></a>
+                <a class="nav-link collapsed text-truncate" href="#" data-toggle="collapse">&nbsp <i class="bi bi-bar-chart-fill"></i> <b>Data Viz</b></a>
                     <div class="collapse show" aria-expanded="false">
                         <ul class="flex-column pl-2 nav">
-                            <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-easel"></i>Dashboard</a></li>
-							<li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-zoom-in"></i>Data Exploration</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">&nbsp <i class="bi bi-zoom-in"></i> Data Exploration</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">&nbsp <i class="bi bi-easel"></i> Dashboard</a></li>
+							
                             <!--<li class="nav-item">
                                 <a class="nav-link collapsed py-1" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1"><span>Customers</span></a>
                                 <div class="collapse" id="submenu1sub1" aria-expanded="false">
@@ -104,45 +85,60 @@ The above copyright notice and this permission notice shall be included in all c
 				
 				
 			<li class="nav-item">
-                <a class="nav-link collapsed text-truncate" href="#" data-toggle="collapse"><i class="bi bi-code-slash"></i>
-              <p style="font-weight:bold"><b>Machine Learning</b></p></a>
+                <a class="nav-link collapsed text-truncate" href="#" data-toggle="collapse">&nbsp <i class="bi bi-code-slash"></i> <b>Machine Learning</b></a>
                     <div class="collapse show" aria-expanded="false">
                         <ul class="flex-column pl-2 nav">
-						<li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-share"></i>Deep Learning</a></li>
-						<li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-diagram-3"></i>Genetic Algorithm</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">&nbsp <i class="bi bi-share"></i> Deep Learning</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">&nbsp <i class="bi bi-diagram-3"></i> Genetic Algorithm</a></li>
                         </ul>
                     </div>
                 </li>
 			<li class="nav-item">
-                <a class="nav-link collapsed text-truncate" href="#" data-toggle="collapse"><i class="bi bi-tools"></i>
-              <p style="font-weight:bold"><b>Modelling/Tools</b></p></a>
+                <a class="nav-link collapsed text-truncate" href="#" data-toggle="collapse">&nbsp <i class="bi bi-box-seam"></i><b> Modelling/Tools</b></a>
                     <div class="collapse show" aria-expanded="false">
                         <ul class="flex-column pl-2 nav">
-                            <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-graph-up"></i>Cashflow</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">&nbsp <i class="bi bi-graph-up"></i> Cashflow</a></li>
                         </ul>
                     </div>
                 </li>
 			
 			<li class="nav-item ">
             <a class="nav-link" href="#">
-               <i class="bi bi-envelope-fill"></i>
-              <p style="font-weight:bold"><b>Contact</b></p>
+               &nbsp <i class="bi bi-envelope-fill"></i> <b>Contact</b>
             </a>
           </li>
 
 
         </ul>
-      </div>
-    </div>
-    <div class="main-panel">
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
+		  
+		  
+		  
+        </nav>
+
+        <div id="content" style="font-family: 'Times New Roman', serif;font-size:20px;">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+                        <i class="bi bi-list-task"></i>
+                    </button>
+
+
+
+                </div>
+            </nav>
+			
+			
+			<br>
+			
+			
+<div class="row">
 			<div class="col-3">
 			</div>
 			<div class="col-6 text-center">
 			<!-- <h2>🛡️ Safe  ⚙️ Pragmatic  🎯 Tailored</h2> -->
-			<h2 style="font-weight:bold">⚙️ Streamlined Data Analytics</h2>
+			<h2 style="font-weight:bold">Streamlined Data Analytics</h2>
 			</div>
 			<div class="col-3">
 			</div>
@@ -150,44 +146,44 @@ The above copyright notice and this permission notice shall be included in all c
 		  <br>
 		  <br>
 		  <div class="row">
-			<div class="col-2">
+			<div class="col-1">
 			</div>
-			<div class="col-8 text-justify">
-			<!-- <h2>🛡️ Safe  ⚙️ Pragmatic  🎯 Tailored</h2> -->
+			<div class="col-10 text-justify">
+		
 			<p style="font-weight:bold">Tools built for easy data analytics deployment solving 2 main issues : Lack of IT resources and/or High IT constraints.</p>
 			<p><a style="font-weight:bold">Lack of IT resources:</a> No programming language (fully) available on your machine ? IT enviromnent not enough mature to deploy data solutions ? No proper dataviz tools and don't want to pay hefty prices from mainstream tools that are either too restricted or too complex for your needs ? </p>
-			<p><a style="font-weight:bold">High IT constraints:</a> Cannot send sensitive data in the cloud ? Cannot develop solutions with your favourite language due to external packages you cannot install ? Your project is not IT main focus yet you are tied to its strict policies ?</p>
+			<p><a style="font-weight:bold">High IT constraints:</a> Cannot send sensitive data in the cloud ? Cannot develop solutions with your favourite language due to external packages you cannot install ? Your project is not the IT department priority yet you are tied to its strict policies ?</p>
 			<br>
 			<p><a style="font-weight:bold">Client Side Solutions</a> answers your needs with the following benefits:</p>
 			<ul>
 			<li style="list-style-type: none">
-			<a  style="font-weight:bold">🛡️ Safe by design</a>: Everything stay on your machine. You don't believe us ? Visit the demo pages (sidebar) and ... shutdown your internet connection. (You will need to reactivate your connection to load another demo page).
+			<a  style="font-weight:bold"><i class="bi bi-shield-check"></i> Safe by design</a>: Everything stay on your machine. You don't believe us ? Visit the demo pages and ... shutdown your internet connection. (You will need to reactivate your connection each time you load another demo page).
 			</li style="list-style-type: none">
 			<li style="list-style-type: none">
-			<a  style="font-weight:bold">⚙️ Pragmatic by purpose</a>: Having trimmed the fat and the unnecessary to comply with "challenging IT environment" our solutions are lightweight and can be used during POC/Discovery phases as well as in production. Hence faster implementation of data projects.
+			<a  style="font-weight:bold"><i class="bi bi-recycle"></i> Pragmatic by purpose</a>: Having trimmed the fat and the unnecessary to comply with "challenging IT environment" our solutions are lightweight and can be used during POC/Discovery phases as well as in production. Hence faster implementation for small data projects.
 			</li>
 			<li style="list-style-type: none">
-			<a  style="font-weight:bold">🎯 Tailored by choices</a>: Different tools for different tasks. We built modular solutions that can be combined to fulfill your needs. And we can easily develop customized solutions as our tools is not tied with any third party apps / licenses.
+			<a  style="font-weight:bold"><i class="bi bi-tools"></i> Tailored by choices</a>: Different tools for different tasks. We built modular solutions that can be combined to fulfill your needs. And we can easily develop customized solutions as our tools are not tied with any third party apps / licenses.
 			</ul>
 			</div>
-			<div class="col-2">
+			<div class="col-1">
 			</div>
 		  </div>
-      
-        </div>
-      </div>
- 
-    </div>
-  </div>
 
-  <!--   Core JS Files   -->
-  <script src="static/js/jquery.min.js"></script>
-  <script src="static/js/popper.min.js"></script>
-  <script src="static/js/bootstrap-material-design.min.js"></script>
-  <script src="static/js/perfect-scrollbar.jquery.min.js"></script>
- 
- 
+    </div>
+    </div>
+
+
+
+<!-- Flask template
+<script src="{{ url_for('static', filename='js/jquery-3.3.1.slim.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/collapse_sidebar.js') }}"></script>-->
+
+<script src="static/js/jquery-3.3.1.slim.min.js"></script>
+<script src="static/js/bootstrap.bundle.min.js"></script>
+<script src="static/js/collapse_sidebar.js"></script>
 
 </body>
 
-</html>
+</html
