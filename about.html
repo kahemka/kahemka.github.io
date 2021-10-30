@@ -9,7 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Client Side Solutions: Guidelines.</title>
 <link href="Launcher/css/style.css" rel="stylesheet">
-<link href="Launcher/css/about_style.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
@@ -30,54 +29,137 @@
 <a id="fork" target="_self" href="index.html"><i class="fa fa-undo"></i></h4></a>
 
 
-<div class="row">
+<div class="row align-items-center" >
 
-<div class="col-1"></div>
+<div class="col-auto"></div>
 
-<div class="col-10">
-  <div class="d-flex bg-white flex-row shadow nav-border">
-        <div class="d-flex align-items-start">
-          <div class="nav flex-column nav-pills me-3 nav-shadow pb-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
-            <div class="circle-icon d-flex align-items-center justify-content-center me-3"> <i class="fa fa-archive"></i> </div>
-            <b>What</b></button>
-            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-            <div class="circle-icon d-flex align-items-center justify-content-center me-3"> <i class="fa fa-question"></i> </div>
-            <b>Why</b></button>
-            <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-            <div class="circle-icon d-flex align-items-center justify-content-center me-3"><i class="fa fa-cogs"></i> </div>
-            <b>How</b></button>
-            <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-            <div class="circle-icon d-flex align-items-center justify-content-center me-3"> <i class="fa fa-users"></i> </div>
-            <b>Who</b></button>
-            <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-            <div class="circle-icon d-flex align-items-center justify-content-center me-3"> <i class="fa fa-user"></i> </div>
-            About me</button>
-          </div>
-          <div class="tab-content" id="v-pills-tabContent">
-            <div id="What">
-              <br>
-              <h4><strong>What is <i>Client Side Solutions</i> ?</strong></h4>
+<div class="col-auto">
+
+<div class="card justify-content border-dark">
+  <div class="card-header">
+    <ul class="nav nav-tabs nav-pills card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" onclick="click_show('What')"  id="s_What" href="#">What</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="click_show('Why')" id="s_Why" href="#">Why</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="click_show('How')" id="s_How">How</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#" onclick="click_show('Who')" id="s_Who" >Who</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#" onclick="click_show('About me')" id="s_About me">About me</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    
+	 <div id="What" style="display:block">
+              <h4><strong>What is Client Side Solutions ?</strong></h4>
               <br>
               <p><i>Client Side Solutions</i> is a personal project that aims to provide simple yet powerful tools regarding the analytical space.</p>
         <p>You will find on this website tools & services that can be used right away. Play with it and explore the capabilites of "C.S.S".</p>
         <p>A documentation is available <a href="">here</a> for more informations about the various displayed apps</p>
-        <p>Keep it mind that these showcased applications were meant to tackle predetermined tasks for demonstration purpose.
+        <p>Keep it mind that these showcased applications were meant to tackle predetermined tasks for demonstration purpose.</p>
           <p>Therefore, they can  be tuned to better fit similar needs you might have.</p>
-          <p>Feel free to contact me in case you have any feedbacks or enquiries: <h3><i class="fa fa-envelope" ></i> <i class="fa fa-comment" ></i> <i class="fa fa-linkedin-square"></i></h3></p>
+         </div>
+			
 
+ 
+			  <div id="Why" style="display:none">
+              <h4><strong>Why <i>Client Side Solutions</i> ?</strong></h4>
+              <br>
+              <p>Client Side Solutions : Working on the client side.</p>
+        <p>It's easier for companies to sell server based software: You take your customer's data and you keep the code.</p>
+		<p>Meaning that while you provide a service, the end product does not entirely belong to your customer. If interested, he is forced to create an account / subscribe to your services</p>
+        <p>On the other end, some people needing these tools might be left out:</p>
+
+		<p>Server based solutions might not be allowed by their IT environment : forbidden to transfersensitive data, not enough IT maturity, lack of programming skills.
+		</p>
+          <p>Last but not least: While the server based approach enables complex analytic operations, it is often overkill regarding the targeted task. Wasting energy and unecessary ressources:</p>
+				<img src="Launcher/img/about_consumption.png"></img>
+			</div>
+        <div id="How" style="display:none">
+              <h4><strong>How  does Client Side Solutions work ?</strong></h4>
+              <br>
+              <p>Client Side Solutions : Working on <b>client side</b>.</p>
+        <p>Put it simply : when you are visiting a website, your computer is doing some work to render what you are seeing.</p>
+        <p>Client Side Solutions just ask him on top of that, a little extra-work to perform the required task.</p>
+        <p>For simple tasks as showcased here : no need to spend more energy powering up distant servers to achieve what is needed.</p>
+          <p>No need to send (sensitive) data far away: everything stay in your computer.</p>
+         <p>And you keep the code: all the code. Your data is safe and the code fully auditable.</p>
+		
             </div>
-
-
-          </div>
-        </div>
-      </div>
+			
+			
+		<div id="Who" style="display:none">
+              <h4><strong>For who is Client Side Solutions meant ?</i></strong></h4>
+              <br>
+              <ul>
+			  <li>People who want to explore analytic and digital solutions without entering complex and cumbersome solutions</li>
+			  <li>People with limited IT ressources : either because of strict IT constraints or lack of IT ressources</li>
+			  <li>Hobbyists who wants to play with data and simple analytic solutions without having to spend time installing lots of dependancies / creating an account for a cloud service they won't use 2 month later.</li>
+			  </ul>
+			<p>Try the showcased applications. Your needs might be solved by solutions much simplier than what you thought.</p>
+            </div>
+			
+			
+			<div id="About me" style="display:none">
+              <h4><strong>About me</i></strong></h4>
+              <br>
+              <p>Experienced data scientist, I have worked in insurance and asset management. </p>
+			  <p>I am currently lucky to have at my disposal all the IT ressources I need to quickly put in production analytical projects I am working on</p>
+				<p>But it has not always been the case. Hence this side project: to find the light even through the darkest of times.</p>
+			  <p>Forbidden to use any programming languages besides MS office = Excel is the only solution ? Nope !</p>
+			  <p>For any feedbacks or enquiries, contact me with the following links:</p>
+            </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </div>
+ 
 </div>
-<div class="col-1"></div>
+
+
+
+ 
+           
+
+ 
+ 
+
 
 </div>
 
+ <div class="col-auto"></div>
+</div>
 
+
+<script>
+function click_show(choix){
+var c = ["What","Why","How","Who","About me"];
+for (var i=0;i<c.length;i++){
+	if (c[i]==choix){
+		document.getElementById(c[i]).style.display ="block";
+		document.getElementById("s_"+c[i]).classList.add("active");
+	}
+	else{
+	document.getElementById(c[i]).style.display ="none";
+	document.getElementById("s_"+c[i]).classList.remove("active");
+	}
+}
+console.log(choix);
+}
+</script>
 
 </body>
 
