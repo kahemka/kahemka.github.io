@@ -1,0 +1,82 @@
+<html>
+<head>
+<link rel="stylesheet" href="../Core/Ext/Styles/bootstrap.css"/>
+<link rel="stylesheet" href="../Launcher/css/style.css"/>
+<style>
+
+</style>
+</head>
+<body>
+  <br>
+  <br>
+  <div class="container justify-content-center">
+<br>
+<br>
+<div class="row justify-content-center d-flex">
+  <div class="col-1"></div>
+  <div class="col-10 justify-content-center d-flex">
+
+    <input type="file" id="idLoadFile" onchange="df.singleLoad()" onclick="this.value=null;"   accept=".csv"></div>
+
+  <div class="col-1"></div>
+</div>
+<br>
+<br>
+<div class="row justify-content-right d-flex">
+<div class="row justify-content-right d-flex">
+  <div class="col-1"></div>
+  <div class="col-10  d-flex">
+<ul class="nav nav-pills">
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="#">Table</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#">Filtering</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#">Info</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#">Interactions</a>
+</li>
+</ul>
+</div>
+  <div class="col-1"></div>
+</div>
+<br>
+<br>
+
+
+
+<div class="row justify-content-center d-flex">
+  <div class="col-1"></div>
+  <div class="col-10  d-flex table-responsive">
+  <table class="table" style="display:none" id="table">
+
+      </table>
+    </div>
+
+      <div class="col-1"></div>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-1"></div>
+<div class="col-10" >
+      <nav aria-label="Page navigation example" style="display:none" id="pagination">
+</nav>
+</div>
+
+<div class="col-1"></div>
+</div>
+</div>
+
+
+ <a id="fork" target="_self" href="../Launcher/sections/ml_platform.html">Back</a>
+
+<script src="../Core/Ext/Modules/papaparse.js"></script>
+<script src="../Core/Int/Modules/css_df.js"></script>
+<script>
+var df = new DataFrame("df","idLoadFile","table","pagination");
+</script>
+</body>
+</html>
