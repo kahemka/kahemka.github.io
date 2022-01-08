@@ -59,7 +59,7 @@ class KanbanCard{
 									<div class="tasks" id="id_${l}">
 									${innerCards}
 									</div>
-									<div class="btn btn-primary btn-block" onclick="window['${this.ref_name}'].test_add()">📌</div>
+									<div class="btn btn-primary btn-block" onclick="window['${this.ref_name}'].add_task('${l}')">📌</div>
 									</div>
 								</div>
 							</div>`
@@ -83,8 +83,31 @@ class KanbanCard{
 	delete this.record[lane];
 	}
 
-	test_add(){
-	alert("Works");
+	add_task(lane){
+
+		Swal.fire({
+	  title: 'Create task',
+	  html: `<input type="text" id="title" class="swal2-input" placeholder="Title">
+	  <input type="text" id="project" class="swal2-input" placeholder="Project">
+		<input type="text" id="status" class="swal2-input" placeholder="Status (ok/complex/alert)">
+		<input type="text" id="progress" class="swal2-input" placeholder="Progress (number)">
+		<textarea id="desc" class="swal2-input" placeholder="Description"></textarea>
+		`,
+	  confirmButtonText: 'Create',
+	  focusConfirm: false,
+	  preConfirm: () => {
+	    const title= Swal.getPopup().querySelector('#title').value
+	    const project = Swal.getPopup().querySelector('#project').value
+			const status = Swal.getPopup().querySelector('#status').value
+			const desc = Swal.getPopup().querySelector('#desc').value
+			const progress = Swal.getPopup().querySelector('#progress').value
+	    return { title: title, project: project, status:status, desc:desc, progress:progress }
+	  }
+	}).then((result) => {
+		this.add(lane, result.value.title, result.value.project, result.value.status, result.value.desc, result.value.progress);
+
+	})
+
 	}
 	add(lane, title, project, status,desc, progress){
 		this.record[lane].push({"title":title, "project":project,"status":status,"desc":desc,"progress":progress});
