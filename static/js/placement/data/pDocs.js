@@ -2,7 +2,7 @@
 // Navigation //
 ////////////////
 
-let menuEx = [{"title":"🌌 Origin","color":"dark","link":"Index.html"},{"title":"📖 Documentation","color":"warning","link":"#"}]
+let menuEx = [{"title":"🌌 Origin","color":"dark","link":"index.html"},{"title":"📖 Documentation","color":"warning","link":"#"}]
 placeMenuButton("menuButton", menuEx)
 
 
