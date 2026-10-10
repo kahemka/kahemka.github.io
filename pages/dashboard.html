@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard demo using Plotly.js and Leaflet.">
+  <title>Dashboard - Base UI</title>
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+
+  <style>
+   
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <a href="../index.html" class="header-brand">Base UI</a>
+    <nav class="header-nav">
+
+            <a href="../index.html" class="active">
+                Home
+            </a>
+			
+		
+
+          
+            <a href="notes.html" class="active">
+                Notes
+            </a>
+                
+            <a href="experiments.html" class="active">
+                Artifacts
+            </a>
+			
+			
+			<a href="login.html" class="active">
+                 Account
+            </a>
+			<button onclick="switchLight()" id="interrupteur" class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+    ☾ 
+</button>
+
+
+        </nav>
+  </header>
+
+  <main class="page">
+    <div class="page-header">
+      <div>
+        <span class="badge mb-4">Analytics</span>
+        <h1 class="page-title">Dashboard</h1>
+        <p class="page-description">Compact demo of charts, controls, progress, tables and mapping.</p>
+      </div>
+      <div class="flex gap-2">
+        <button class="btn btn-secondary" type="button">Export</button>
+        <button class="btn btn-primary" type="button">Run analysis</button>
+      </div>
+    </div>
+
+    <section class="grid grid-4">
+      <div class="card">
+        <span class="text-small text-secondary">Total exposure</span>
+        <div class="dashboard-kpi-value">EUR 248.6m</div>
+        <span class="badge badge-success">+4.8%</span>
+      </div>
+      <div class="card">
+        <span class="text-small text-secondary">Locations</span>
+        <div class="dashboard-kpi-value">12,480</div>
+        <span class="text-small text-secondary">Active records</span>
+      </div>
+      <div class="card">
+        <span class="text-small text-secondary">Selected area</span>
+        <div class="dashboard-kpi-value">36.2 km2</div>
+        <span class="text-small text-secondary">Current filter</span>
+      </div>
+      <div class="card">
+        <span class="text-small text-secondary">Model score</span>
+        <div class="dashboard-kpi-value">0.84</div>
+        <span class="badge">Stable</span>
+      </div>
+    </section>
+
+    <section class="grid grid-2 dashboard-section">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Exposure evolution</h2>
+          <p class="text-small text-secondary mb-0">Plotly.js line chart</p>
+        </div>
+        <div id="line-chart" class="dashboard-chart"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Portfolio distribution</h2>
+          <p class="text-small text-secondary mb-0">Plotly.js bar chart</p>
+        </div>
+        <div id="bar-chart" class="dashboard-chart"></div>
+      </div>
+    </section>
+
+    <section class="grid dashboard-section" style="grid-template-columns:minmax(280px, 360px) minmax(0, 1fr);">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Parameters</h2>
+          <p class="text-small text-secondary mb-0">Example form controls</p>
+        </div>
+
+        <div class="control-row">
+          <div class="form-group">
+            <label for="radius">Radius</label>
+            <input id="radius" type="number" value="100" min="0">
+            <span class="form-help">Distance in metres</span>
+          </div>
+          <div class="form-group">
+            <label for="scenario">Scenario</label>
+            <select id="scenario">
+              <option>Base</option>
+              <option>Stress</option>
+              <option>Extreme</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="portfolio">Portfolio name</label>
+          <input id="portfolio" type="text" value="Demo portfolio">
+        </div>
+
+        <div class="form-group">
+          <label>Layers</label>
+          <div class="check-list">
+            <label class="check-item"><input type="checkbox" checked> Locations</label>
+            <label class="check-item"><input type="checkbox" checked> Concentrations</label>
+            <label class="check-item"><input type="checkbox"> Claims</label>
+            <label class="check-item"><input type="checkbox"> Boundaries</label>
+          </div>
+        </div>
+
+        <div class="flex gap-2" style="margin-top:24px;">
+          <button class="btn btn-primary" type="button">Apply</button>
+          <button class="btn btn-secondary" type="button">Reset</button>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="padding:20px;border-bottom:1px solid var(--color-border);">
+          <h2 class="card-title">Map</h2>
+          <p class="text-small text-secondary mb-0">Leaflet demo centred on Luxembourg</p>
+        </div>
+        <div id="demo-map"></div>
+      </div>
+    </section>
+
+    <section class="card dashboard-section">
+      <div class="flex justify-between items-center gap-4" style="margin-bottom:14px;">
+        <div>
+          <h2 class="card-title">Processing</h2>
+          <p class="text-small text-secondary mb-0">Example progress indicator</p>
+        </div>
+        <strong>68%</strong>
+      </div>
+      <div class="progress-track" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="flex justify-between text-small text-secondary" style="margin-top:10px;">
+        <span>6,842 records processed</span>
+        <span>10,000 total</span>
+      </div>
+    </section>
+
+    <section class="dashboard-section" style="padding-bottom:70px;">
+      <div class="page-header">
+        <div>
+          <h2 class="page-title">Results</h2>
+          <p class="page-description">Responsive tabular output.</p>
+        </div>
+        <button class="btn btn-secondary btn-sm" type="button">Download CSV</button>
+      </div>
+
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Area</th>
+              <th>Locations</th>
+              <th>Exposure</th>
+              <th>Score</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Luxembourg Centre</td><td>2,184</td><td>EUR 64.2m</td><td>0.91</td><td><span class="badge badge-warning">Review</span></td></tr>
+            <tr><td>Gare</td><td>1,420</td><td>EUR 42.7m</td><td>0.76</td><td><span class="badge badge-success">Normal</span></td></tr>
+            <tr><td>Ville Haute</td><td>986</td><td>EUR 31.5m</td><td>0.82</td><td><span class="badge badge-success">Normal</span></td></tr>
+            <tr><td>Kirchberg</td><td>1,731</td><td>EUR 55.8m</td><td>0.95</td><td><span class="badge badge-danger">High</span></td></tr>
+            <tr><td>Other</td><td>6,159</td><td>EUR 54.4m</td><td>0.61</td><td><span class="badge">Monitor</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-3.1.0.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="../js/base.js"></script>
+<script src="../js/dashboard.js"></script>
+
+</body>
+</html>

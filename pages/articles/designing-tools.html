@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Example article page for Base UI.">
+  <title>Designing tools that stay simple · Base UI</title>
+
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../js/articles.js">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <a href="../../index.html" class="header-brand">Base UI</a>
+    <nav class="header-nav">
+
+            <a href="../../index.html" class="active">
+                Home
+            </a>
+			
+		
+
+          
+            <a href="../notes.html" class="active">
+                Notes
+            </a>
+                
+            <a href="../experiments.html" class="active">
+                Artifacts
+            </a>
+			
+			
+			<a href="../login.html" class="active">
+                 Account
+            </a>
+			<button onclick="switchLight()" id="interrupteur" class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+    ☾ 
+</button>
+
+
+        </nav>
+  </header>
+
+  <main class="page">
+    <article style="padding-top:72px;padding-bottom:100px;">
+      <header class="page-narrow">
+        <a href="../notes.html" class="text-small text-secondary">← All articles</a>
+
+        <div class="flex items-center gap-3" style="margin-top:40px;margin-bottom:22px;">
+          <span class="badge">Design</span>
+          <span class="text-small text-secondary">8 min read</span>
+        </div>
+
+        <h1 style="font-size:clamp(3rem,6vw,5.5rem);line-height:.98;margin-bottom:28px;">
+          Designing tools that stay simple as they grow.
+        </h1>
+
+        <p class="text-secondary" style="font-size:1.2rem;line-height:1.65;max-width:760px;margin-bottom:36px;">
+          A demonstration article for the Base UI template, combining long-form text, an external image and mathematical notation without changing the underlying design system.
+        </p>
+
+        <div class="flex justify-between items-center gap-4" style="padding-bottom:28px;border-bottom:1px solid var(--color-border);">
+          <div>
+            <strong>Kevin Vu</strong>
+            <div class="text-small text-secondary">10 October 2026</div>
+          </div>
+          <span class="text-small text-secondary">Design · Technology</span>
+        </div>
+      </header>
+
+      <div class="page-narrow" style="padding-top:48px;font-size:1.05rem;line-height:1.8;">
+        <p>
+          A useful interface does not need to expose every possibility at once. A stable visual foundation can remain deliberately small while individual applications introduce maps, analytical tables, three-dimensional scenes or editorial content only where those elements are useful.
+        </p>
+
+        <p>
+          This approach separates the parts that should remain consistent, such as typography, spacing, buttons, forms and colour themes, from the parts that belong to a particular application. The result is less visual drift between projects and a clearer place for project-specific CSS and JavaScript.
+        </p>
+
+        <figure style="margin:52px 0;">
+          <img
+            src="https://images.unsplash.com/photo-1567943183748-3a7542120c90?auto=format&fit=crop&w=1600&q=85"
+            alt="Abstract modern architecture with curved white surfaces"
+            style="width:100%;max-height:560px;object-fit:cover;border:1px solid var(--color-border);border-radius:var(--radius-lg);"
+          >
+          <figcaption class="text-small text-secondary" style="margin-top:10px;">
+            Example external image: abstract architecture from Unsplash.
+          </figcaption>
+        </figure>
+
+        <h2 style="margin-top:56px;">A quantitative way to think about simplicity</h2>
+
+        <p>
+          We can even describe the trade-off with a deliberately simple illustrative score. Suppose an interface has a complexity cost <em>C</em>, a usability benefit <em>U</em>, and a maintenance burden <em>M</em>. A toy objective could be written as:
+        </p>
+
+        <div style="margin:38px 0;padding:28px;border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);text-align:center;overflow-x:auto;font-size:1.2rem;">
+          \[
+            S = \frac{U}{1 + \alpha C + \beta M}
+          \]
+        </div>
+
+        <p>
+          Here, \(S\) is only an illustrative simplicity score, while \(\alpha\) and \(\beta\) express how strongly complexity and maintenance matter for the project. The formula is not intended as a real design metric. It simply demonstrates how mathematical notation can sit naturally inside an article alongside ordinary prose.
+        </p>
+
+        <h2 style="margin-top:56px;">One visual language, different products</h2>
+
+        <p>
+          A blog page benefits from a constrained reading width. A dashboard often benefits from using almost the full screen. A three-dimensional interface may need to give most of the viewport to a canvas. Those layouts can still share the same typography, controls, theme variables and interaction patterns.
+        </p>
+
+        <blockquote style="margin:48px 0;padding:8px 0 8px 28px;border-left:3px solid var(--color-text);font-size:1.3rem;line-height:1.55;font-weight:500;">
+          Keep the foundation stable and let the application provide the complexity.
+        </blockquote>
+
+        <p>
+          The practical advantage is that a new project starts from a known baseline. The design work can then focus on what makes the application different instead of repeatedly solving navigation, typography, responsive spacing and basic components.
+        </p>
+
+        <div class="divider" style="margin-top:64px;"></div>
+
+        <div class="flex justify-between items-center gap-4" style="padding-top:16px;">
+          <a href="../notes.html">
+            <div class="text-small text-secondary">Back to</div>
+            <strong>All articles</strong>
+          </a>
+          <span style="font-size:1.5rem;">←</span>
+        </div>
+      </div>
+    </article>
+  </main>
+</div>
+
+<script src="../../js/base.js"></script>
+
+</body>
+</html>
